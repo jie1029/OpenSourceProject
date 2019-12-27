@@ -103,7 +103,7 @@ io.on("connection", socket => {
         };
       } else {
         var options = {
-          uri: "http://202.31.200.140/add_warning_kakao.php",
+          uri: "http://MYIP/add_warning_kakao.php",
           method: "POST",
           form: {
             nick: data.nick
@@ -199,7 +199,7 @@ io.on("connection", socket => {
 
   function addFestival(fid) {
     let options = {
-      uri: "http://202.31.200.140/add_calendar.php",
+      uri: "http://MYIP/add_calendar.php",
       method: "POST",
       form: {
         fid: fid
@@ -230,7 +230,7 @@ io.on("connection", socket => {
 
   function showCalendar() {
     let options = {
-      uri: "http://202.31.200.140/show_calendar.php",
+      uri: "http://MYIP/show_calendar.php",
       json: true
     };
     request.get(options, function(err, res, body) {
@@ -266,7 +266,7 @@ io.on("connection", socket => {
 
   function reqFestival(date, location) {
     let options = {
-      uri: "http://202.31.200.140/test/search.php",
+      uri: "http://MYIP/test/search.php",
       method: "GET",
       qs: {
         date: date,
@@ -422,7 +422,7 @@ io.on("connection", socket => {
 
   socket.on("setNick", data => {
     let options = {
-      uri: "http://202.31.200.140/change_nick_kakao.php",
+      uri: "http://MYIP/change_nick_kakao.php",
       method: "POST",
       form: {
         id: data.id,
@@ -447,7 +447,7 @@ io.on("connection", socket => {
 
     if (data.group == "nomal") {
       var options = {
-        uri: "http://202.31.200.140/change_nick.php",
+        uri: "http://MYIP/change_nick.php",
         method: "POST",
         form: {
           id: data.id,
@@ -457,7 +457,7 @@ io.on("connection", socket => {
       };
     } else {
       var options = {
-        uri: "http://202.31.200.140/change_nick_kakao.php",
+        uri: "http://MYIP/change_nick_kakao.php",
         method: "POST",
         form: {
           id: data.id,
@@ -516,7 +516,7 @@ io.on("connection", socket => {
     console.log("로그인 요청");
 
     let options = {
-      uri: "http://202.31.200.140/login.php",
+      uri: "http://MYIP/login.php",
       method: "POST",
       form: {
         id: data.id,
@@ -544,7 +544,7 @@ io.on("connection", socket => {
     console.log(data);
     console.log("카카오로그인 요청");
     let options = {
-      uri: "http://202.31.200.140/kakao_login.php",
+      uri: "http://MYIP/kakao_login.php",
       method: "POST",
       form: {
         id: data.id
@@ -573,7 +573,7 @@ io.on("connection", socket => {
       io.to(socket.id).emit("join_fail", data.joinStatus);
     } else {
       let options = {
-        uri: "http://202.31.200.140/join.php",
+        uri: "http://MYIP/join.php",
         method: "POST",
         form: {
           id: data.userid,

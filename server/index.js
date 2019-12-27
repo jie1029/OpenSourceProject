@@ -94,7 +94,7 @@ io.on("connection", socket => {
 
       if (data.group == "nomal") {
         var options = {
-          uri: "http://202.31.200.140/add_warning.php",
+          uri: "http://MYIP/add_warning.php",
           method: "POST",
           form: {
             nick: data.nick
